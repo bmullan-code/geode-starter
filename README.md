@@ -2,6 +2,15 @@
 A basic geode/gemfire hello world type application.
 
 
+## To run in PCF
+
+Create PCC Service Instance
+
+Push App
+
+Bind Service
+
+
 ## To run locally (using docker)
 
 Start Apache Geode
