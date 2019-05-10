@@ -4,7 +4,9 @@ package com.example.geodestarter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.gemfire.config.annotation.EnableCachingDefinedRegions;
 import org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration;
-import org.springframework.data.gemfire.config.annotation.EnableLogging;
+import org.springframework.data.gemfire.config.annotation.EnableEntityDefinedRegions;
+import org.springframework.data.gemfire.config.annotation.EnablePdx;
+import org.springframework.data.gemfire.repository.config.EnableGemfireRepositories;
 
 /**
  * Spring {@link Configuration} class used to configure Apache Geode.
@@ -16,13 +18,17 @@ import org.springframework.data.gemfire.config.annotation.EnableLogging;
  * @see org.springframework.data.gemfire.config.annotation.EnableClusterConfiguration
  * @since 1.0.0
  */
-@SuppressWarnings("unused")
+//@SuppressWarnings("unused")
 // tag::class[]
 @Configuration
-@EnableLogging(logLevel = "error")
+//@EnableLogging(logLevel = "error")
 //@EnableCachingDefinedRegions(clientRegionShortcut = ClientRegionShortcut.LOCAL)
+//@ClientCacheApplication
 @EnableCachingDefinedRegions
-@EnableClusterConfiguration(useHttp = true)
+@EnableGemfireRepositories
+@EnableEntityDefinedRegions(basePackageClasses = Box.class)
+@EnableClusterConfiguration(useHttp = true )
+@EnablePdx(readSerialized = true)
 public class GeodeConfiguration { }
 // end::class[]
 
