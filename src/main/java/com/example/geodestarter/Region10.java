@@ -1,15 +1,10 @@
 package com.example.geodestarter;
 
-import java.io.Serializable;
-
-import org.apache.geode.pdx.PdxReader;
-import org.apache.geode.pdx.PdxWriter;
-import org.jgroups.util.UUID;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.gemfire.mapping.annotation.Region;
 
 @Region("Region10")
-public class Region10 { //Serializable
+public class Region10 implements Serializable { 
 	
 	@Id
 	private CompoundKey key;
