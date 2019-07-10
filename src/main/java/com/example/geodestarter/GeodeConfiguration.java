@@ -24,11 +24,9 @@ import org.springframework.data.gemfire.repository.config.EnableGemfireRepositor
 //@EnableLogging(logLevel = "error")
 //@EnableCachingDefinedRegions(clientRegionShortcut = ClientRegionShortcut.LOCAL)
 //@ClientCacheApplication
-@EnableCachingDefinedRegions
-@EnableGemfireRepositories
-@EnableEntityDefinedRegions(basePackageClasses = Box.class)
-@EnableClusterConfiguration(useHttp = true )
-@EnablePdx(readSerialized = true)
+//@EnableCachingDefinedRegions
+//@EnableGemfireRepositories
+//@EnablePdx(readSerialized = true)
 public class GeodeConfiguration { }
 // end::class[]
 
